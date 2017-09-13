@@ -3,18 +3,17 @@
 <plist version="1.0">
 <dict>
     <key>Description</key>
-    <string>Downloads latest version of Hopper Disassembler 4 and imports into a Munki repo.
-
-Please see the Description for HopperDisassembler4.download for a description
-of a current issue preventing the downloading of the full version.</string>
+    <string>Downloads the most recent version of Sonic Visualiser and
+imports into Munki. Requires the autopkg/hansen-m-recipes repo.
+</string>
     <key>Identifier</key>
-    <string>com.github.timsutton.munki.HopperDisassembler4</string>
+    <string>com.github.timsutton.munki.SonicVisualiser</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
-        <string>HopperDisassembler4</string>
+        <string>SonicVisualiser</string>
         <key>MUNKI_REPO_SUBDIR</key>
-        <string>apps/Hopper</string>
+        <string>apps/%NAME%</string>
         <key>pkginfo</key>
         <dict>
             <key>catalogs</key>
@@ -22,9 +21,9 @@ of a current issue preventing the downloading of the full version.</string>
                 <string>testing</string>
             </array>
             <key>description</key>
-            <string>Hopper is a reverse engineering tool for OS X, Linux and Windows, that lets you disassemble, decompile and debug (OS X only) your 32/64bits Intel Mac, Windows and iOS (ARM) executables.</string>
-            <key>display_name</key>
-            <string>Hopper Disassembler</string>
+            <string>Sonic Visualiser is an application for viewing and analysing the contents of music audio files.</string>
+            <key>minimum_os_version</key>
+            <string>10.7</string>
             <key>name</key>
             <string>%NAME%</string>
             <key>unattended_install</key>
@@ -34,13 +33,9 @@ of a current issue preventing the downloading of the full version.</string>
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.timsutton.download.HopperDisassembler4</string>
+    <string>com.github.hansen-m.download.SonicVisualiser</string>
     <key>Process</key>
     <array>
-        <dict>
-            <key>Processor</key>
-            <string>MunkiPkginfoMerger</string>
-        </dict>
         <dict>
             <key>Arguments</key>
             <dict>
